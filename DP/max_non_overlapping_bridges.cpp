@@ -2,7 +2,10 @@
 #include<vector>
 #include<algorithm>
 using namespace std;
-/* Variant of LIS.TC:O(n^2) SC:O(n) */
+/* Variant of LIS
+
+Sol1: TC:O(n^2)
+*/
 
 bool comp(vector<int>&a,vector<int>&b)
 {
@@ -48,3 +51,26 @@ int main() {
     cout<<max_overlap(co_ord);
 }
         
+/*Sol 2: TC: O(nlogn)-binary search*/
+
+int max_overlap(vector<vector<int>>&co_ord)
+{
+    int n = co_ord.size();
+    sort(co_ord.begin(),co_ord.end(),comp);
+    vector<int>dp(n,1);
+    vector<int>temp;
+    int max_len = 0;
+    temp.push_back(co_ord[0][1]);
+    for(int i = 0;i<n;i++)
+    {
+       if(co_ord[i][1] > temp.back())
+        temp.push_back(co_ord[i][1]);
+       else
+       {
+           int ind = lower_bound(temp.begin(),temp.end(),co_ord[i][1]) - temp.begin();
+           temp[ind] = co_ord[i][1];
+       }
+    }
+    return temp.size();
+    return max_len;
+}
