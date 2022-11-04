@@ -1,3 +1,13 @@
+/*
+The minimum number of deletions to make 2 strings equal.
+1)Find the length of the longest common subsequence.
+2)The additional elements from each string need to be deleted,
+to get the longest string.
+
+TC:O(n^2)
+SC:O(n)
+*/
+
 int minDistance(string word1, string word2) {
 
         int n = word1.size();
