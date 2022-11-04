@@ -1,9 +1,19 @@
 /*LIS variation.
-Generate all variations of a box with different areas
-Sort in the increasing order of area.
-Apply LIS form for maximising height.
-i.e if the current box has length and width less than the box below it,
-and if the height increases after adding this block, update the height.
+Maximum height by stacking boxes such that the box below has the common area dimensions
+greater than the box above,and the boxes can be placed along any face and there
+are infinite number of each boxes available.
+
+Approach:
+
+1) Generate all variations of a box with different areas
+2) Sort in the increasing order of area.
+3) Apply LIS form for maximising height.
+   i.e if the current box has length and width less than the box below it,
+   and if the height increases after adding this block, update the height.
+
+Complexity:
+TC: O(n^2)
+SC: O(n)
 */
 
 #include <iostream>
