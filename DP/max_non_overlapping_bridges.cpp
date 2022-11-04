@@ -4,6 +4,10 @@
 using namespace std;
 /* Variant of LIS
 
+1) Sort the bridge coordinates according to the first coordinate.
+2) With one coordinate already increasing,apply LIS on the second coordinate
+   with the constraint that, the previous bridge will be considered only if
+   the y coordinate of that bridge is lesser than the y coordinate of the current bridge.
 Sol1: TC:O(n^2)
 */
 
