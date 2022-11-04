@@ -1,4 +1,17 @@
- string longestPalindrome(string s) {
+/*
+LCS variant
+
+Length of the longest palindromic subsequence.
+
+Approach:
+Reverse the array and find the length of the longest common
+subsequence.
+
+TC: O(n^2)
+SC: O(n)
+*/
+
+string longestPalindrome(string s) {
         int n = s.size();
         vector<vector<bool>>dp(n,vector<bool>(n,false));
 
