@@ -2,7 +2,9 @@
 1) insert
 2) search
 3) startswith
+The first implementation uses an array of 26, but we can reduce space by using a map as shown in the second part.
 */
+
 class Trie {
     private:
         Trie * arr[26] = {};
@@ -62,6 +64,32 @@ class Trie {
                     return false;
             }
             return true;
+        }
+};
+//Using map
+class Trie {
+    private:
+        unordered_map<int,Trie*>Tr;
+        bool is_word = false;
+
+    public:
+        Trie()
+        {}
+        void add(char ch)
+        {
+            Tr[ch] = new Trie();
+        }
+        bool contains(char ch)
+        {
+            return (Tr.find(ch)!=Tr.end());
+        }
+        void setWord()
+        {
+            is_word = true;
+        }
+        Trie *moveNext(char ch)
+        {
+            return Tr[ch];
         }
 };
 
