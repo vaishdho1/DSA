@@ -1,4 +1,10 @@
 /*Implementation of Djikstra's using a set data structure
+1) In the priority queue impelmentation we need to run !pq.empty() loop a few times
+as we cant update in a priority queue but only insert.
+2) In a set we update so the loop is run exactly V times.
+3) But there is an extra cost of erase which can add a log(V^2) factor.
+4) The time gain is not very sigificant and it depends on the way the graph and its edge weights.
+
 TC: V(log(heap) + edges*(log(heap)))
 edges can be V-1 in the worst case.
 heap size can be V^2 in the worst case with every vertex put into the queue.
