@@ -1,5 +1,6 @@
 /*
-Problem:
+Problem:Minimum cost to reach cities with discount
+
 A series of highways connect n cities numbered from 0 to n - 1.
 You are given a 2D integer array highways where highways[i] = [city1i, city2i, tolli] indicates that there is a highway that connects city1i and city2i, allowing a car to go from city1i to city2i and vice versa for a cost of tolli.
 You are also given an integer discounts which represents the number of discounts you have. 
